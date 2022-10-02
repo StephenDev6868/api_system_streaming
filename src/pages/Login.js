@@ -6,15 +6,15 @@ import { Card, Stack, Link, Container, Typography } from '@mui/material';
 import AuthLayout from '../layouts/AuthLayout';
 // components
 import Page from '../components/Page';
-import {LoginForm} from '../sections/authentication/login';
+import { LoginForm } from '../sections/authentication/login';
 import AuthSocial from '../sections/authentication/AuthSocial';
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(Page)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
-    display: 'flex'
-  }
+    display: 'flex',
+  },
 }));
 
 const SectionStyle = styled(Card)(({ theme }) => ({
@@ -23,7 +23,7 @@ const SectionStyle = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  margin: theme.spacing(2, 0, 2, 2)
+  margin: theme.spacing(2, 0, 2, 2),
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
@@ -33,7 +33,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
   minHeight: '100vh',
   flexDirection: 'column',
   justifyContent: 'center',
-  padding: theme.spacing(12, 0)
+  padding: theme.spacing(12, 0),
 }));
 
 // ----------------------------------------------------------------------
@@ -52,7 +52,7 @@ export default function Login() {
         <ContentStyle>
           <Stack sx={{ mb: 5 }}>
             <Typography variant="h4" gutterBottom>
-              Đăng nhập Ebook Admin
+              Đăng nhập Bonsai Admin
             </Typography>
           </Stack>
 
