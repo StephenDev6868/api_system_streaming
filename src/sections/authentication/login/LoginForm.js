@@ -15,13 +15,13 @@ export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   const LoginSchema = Yup.object().shape({
-    email: Yup.string().email('Email không đúng định dạng').required('Email không được để trống'),
+    emailOrPhone: Yup.string().email('Email không đúng định dạng').required('Email không được để trống'),
     password: Yup.string().required('Mật khẩu không được để trống'),
   });
 
   const formik = useFormik({
     initialValues: {
-      email: '',
+      emailOrPhone: '',
       password: '',
       remember: true,
       error: null,
@@ -30,7 +30,7 @@ export default function LoginForm() {
     onSubmit: (values, formikHelpers) => {
       axios
         .post(`${process.env.REACT_APP_API_HOST}/auth/login`, {
-          email: values.email,
+          emailOrPhone: values.emailOrPhone,
           password: values.password,
         })
         .then(response => {
@@ -62,12 +62,12 @@ export default function LoginForm() {
         <Stack spacing={3}>
           <TextField
             fullWidth
-            autoComplete="username"
+            autoComplete="emailOrPhone"
             type="email"
             label="Email"
-            {...getFieldProps('email')}
-            error={Boolean(touched.email && errors.email)}
-            helperText={touched.email && errors.email}
+            {...getFieldProps('emailOrPhone')}
+            error={Boolean(touched.emailOrPhone && errors.emailOrPhone)}
+            helperText={touched.emailOrPhone && errors.emailOrPhone}
           />
 
           <TextField
